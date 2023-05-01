@@ -1,104 +1,45 @@
+@host = http://localhost:3000
 
+# TRAE TODOS LOS POSTS
 
-# GET ALL TEACHERS
+GET {{host}}/api/posts
 
-GET https://teachers-groupb.herokuapp.com/api/teachers
-GET https://teachers-groupb.herokuapp.com/api/teachers?page=PAGINA
+# TRAE TODOS LOS POSTS CON TODOS LOS DATOS DEL AUTHOR
 
-# RESPONSE 
-{
-  "page": 1,
-  "perPage": 5,
-  "totalItems": 17,
-  "totalPages": 4,
-  "results": [
-    {
-      "id": 1,
-      "first_name": "John",
-      "last_name": "Doe",
-      "username": "johndoe",
-      "email": "john.doe@example.com"
-    },
-    {
-      "id": 11,
-      "first_name": "daniel",
-      "last_name": "colmenares",
-      "username": "dcdager13",
-      "email": "dcdage50@example.com"
-    },
-    
- # GET TEAHCER BY ID
-    
- GET https://teachers-groupb.herokuapp.com/api/teachers/TEACHERID
- 
- # RESPONSE
- 
- [
-  {
-    "id": 11,
-    "first_name": "daniel",
-    "last_name": "colmenares",
-    "username": "dcdager13",
-    "email": "dcdage50@example.com"
-  }
-]
+GET {{host}}/api/posts/author
 
-# CREATE NEW TEACHER
+# TRAE UN POST POR SU ID
 
-POST https://teachers-groupb.herokuapp.com/api/teachers
+GET {{host}}/api/posts/POSTID
 
-# REQUEST
+# CARGAR UN POST
 
-{
-    "first_name" : "daniel",
-    "last_name" : "colmenares",
-    "username" : "dcdager30",
-    "email" : "dcdage55@example.com"
-}
+POST {{host}}/api/posts
 
-# RESPONSE 
+# ACTUALIZAR UN POST POR SU ID
 
-{
-  "id": 211,
-  "first_name": "daniel",
-  "last_name": "colmenares",
-  "username": "dcdager30",
-  "email": "dcdage55@example.com"
-}
- 
- # UPDATE TEACHER
- 
- PUT https://teachers-groupb.herokuapp.com/api/teachers/TEACHERID
- 
- # REQUEST
- 
- {
-    "first_name" : "daniel",
-    "last_name" : "colmenares",
-    "username" : "dcdager17",
-    "email" : "dcdage50@example.com"
-}
+PUT {{host}}/api/posts/POSTID
 
-# RESPONSE 
+# BORRAR UN POST POR SU ID
 
-{
-  "id": 11,
-  "first_name": "daniel",
-  "last_name": "colmenares",
-  "username": "dcdager17",
-  "email": "dcdage50@example.com"
-}
+DELETE {{host}}/api/posts/POSTID
 
-# DELETE TEACHER
+# TRAE TODOS LOS AUTORES
 
-DELETE https://teachers-groupb.herokuapp.com/api/teachers/TEACHERID
- 
- # RESPONSE 
+GET {{host}}/api/authors
 
-{
-  "id": 11,
-  "first_name": "daniel",
-  "last_name": "colmenares",
-  "username": "dcdager17",
-  "email": "dcdage50@example.com"
-}
+# TRAE UN AUTOR POR ID
+
+GET {{host}}/api/authors/AUTORID
+
+# CARGAR UN AUTOR
+
+POST {{host}}/api/authors
+
+# ACTUALIZA UN POST POR ID
+
+PUT {{host}}/api/authors/AUTORID
+
+# BORRAR UN AUTOR POR ID
+
+DELETE {{host}}/api/authors/AUTORID
